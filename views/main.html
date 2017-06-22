@@ -1,0 +1,239 @@
+<div class="container">
+
+    <div class="card card-block card-success">
+        <h2 class="white-text" style="margin-bottom: 20px;">Michael Joyce - Adaptive Mobile Application</h2>
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <input type="text" class="form-control" placeholder="Search" ng-model="searchShip">
+
+                </div>
+                <br />
+                <div class="checkbox">
+                    <h5 class="white-text">Select Columns to show</h5>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showName" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Name</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showModel" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Model</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showMan" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Manufacturer</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showCost" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Cost</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showLength" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Length</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showSpeed" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Speed</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showCrew" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Crew</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showPassengers" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Passengers</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showCargo" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Cargo</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showConsumables" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Consumables</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showHyper" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Hyper</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showMGLT" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">MGLT</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showClass" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Class</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showPilots" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Pilots</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showFilms" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Films</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showCreated" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Created</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showEdited" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">Edited</span>
+                    </label>
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" ng-model="showUrl" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description white-text">URL</span>
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="main_table" class="table-responsive table-sm">
+        <table class="table table-bordered table-striped table-condensed small">
+            <thead>
+                <tr>
+                    <th class="unselectable" ng-show="showName" role="button" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                        <span>Name</span>
+                        <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showModel" role="button" ng-click="sortType = 'model'; sortReverse = !sortReverse"><span>Model</span>
+                        <span ng-show="sortType == 'model' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'model' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showMan" role="button" ng-click="sortType = 'manufacturer'; sortReverse = !sortReverse">Manufacturer
+                        <span ng-show="sortType == 'manufacturer' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'manufacturer' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showCost" role="button" ng-click="sortType = 'cost_in_credits'; sortReverse = !sortReverse">Cost
+                        <span ng-show="sortType == 'cost_in_credits' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'cost_in_credits' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showLength" role="button" ng-click="sortType = 'length'; sortReverse = !sortReverse">Length
+                        <span ng-show="sortType == 'length' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'length' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showSpeed" role="button" ng-click="sortType = 'max_atmosphering_speed'; sortReverse = !sortReverse">Speed
+                        <span ng-show="sortType == 'max_atmosphering_speed' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'max_atmosphering_speed' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showCrew" role="button" ng-click="sortType = 'crew'; sortReverse = !sortReverse">Crew
+                        <span ng-show="sortType == 'crew' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'crew' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showPassengers" role="button" ng-click="sortType = 'passengers'; sortReverse = !sortReverse">Passengers
+                        <span ng-show="sortType == 'passengers' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'passengers' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showCargo" role="button" ng-click="sortType = 'cargo_capacity'; sortReverse = !sortReverse">Cargo Capacity
+                        <span ng-show="sortType == 'cargo_capacity' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'cargo_capacity' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showConsumables" role="button" ng-click="sortType = 'consumables'; sortReverse = !sortReverse">Consumables
+                        <span ng-show="sortType == 'consumables' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'consumables' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showHyper" role="button" ng-click="sortType = 'hyperdrive_rating'; sortReverse = !sortReverse">Hyperdrive Rating
+                        <span ng-show="sortType == 'hyperdrive_rating' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'hyperdrive_rating' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showMGLT" role="button" ng-click="sortType = 'MGLT'; sortReverse = !sortReverse">MGLT
+                        <span ng-show="sortType == 'MGLT' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'MGLT' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showClass" role="button" ng-click="sortType = 'starship_class'; sortReverse = !sortReverse">Starship class
+                        <span ng-show="sortType == 'starship_class' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'starship_class' && !sortReverse" class="fa fa-caret-down"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showPilots" role="button" ng-click="sortType = 'pilots'; sortReverse = !sortReverse">Pilots
+                        <span ng-show="sortType == 'pilots' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'pilots' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showFilms" role="button" ng-click="sortType = 'films'; sortReverse = !sortReverse">Films
+                        <span ng-show="sortType == 'films' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'films' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showCreated" role="button" ng-click="sortType = 'created'; sortReverse = !sortReverse">Created
+                        <span ng-show="sortType == 'created' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'created' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showEdited" role="button" ng-click="sortType = 'edited'; sortReverse = !sortReverse">Edited
+                        <span ng-show="sortType == 'edited' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'edited' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                    <th class="unselectable" ng-show="showUrl" role="button" ng-click="sortType = 'url'; sortReverse = !sortReverse">Url
+                        <span ng-show="sortType == 'url' && !sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="sortType == 'url' && sortReverse" class="fa fa-caret-up"></span>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="starship in data | orderBy:sortType:sortReverse | filter:searchShip">
+                    <td ng-show="showName">{{ starship.name }}</td>
+                    <td ng-show="showModel">{{ starship.model }}</td>
+                    <td ng-show="showMan" >{{ starship.manufacturer }}</td>
+                    <td ng-show="showCost">{{ starship.cost_in_credits }}</td>
+                    <td ng-show="showLength">{{ starship.length }}</td>
+                    <td ng-show="showSpeed">{{ starship.max_atmosphering_speed }}</td>
+                    <td ng-show="showCrew">{{ starship.crew }}</td>
+                    <td ng-show="showPassengers" >{{ starship.passengers }}</td>
+                    <td ng-show="showCargo" >{{ starship.cargo_capacity }}</td>
+                    <td ng-show="showConsumables">{{ starship.consumables }}</td>
+                    <td ng-show="showHyper">{{ starship.hyperdrive_rating }}</td>
+                    <td ng-show="showMGLT">{{ starship.MGLT }}</td>
+                    <td ng-show="showClass">{{ starship.starship_class }}</td>
+                    <td ng-show="showPilots">
+                        <span ng-repeat="pilot in starship.pilots">
+                        {{ pilot }}
+                        </span>
+                    </td>
+                    <td ng-show="showFilms">
+                        <span ng-repeat="film in starship.films">
+                        {{film}}
+                        </span>
+                    </td>
+                    <td ng-show="showCreated" ng-bind="formatDate(starship.created) |  date:'MM/dd/yyyy'">{{ starship.created }}</td>
+                    <td ng-show="showEdited" ng-bind="formatDate(starship.edited) |  date:'MM/dd/yyyy'">{{ starship.edited }}</td>
+                    <td ng-show="showUrl"><a href="{{ starship.url }}" target="blank"><button type="button" class="btn btn-primary btn-sm">View</button></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
